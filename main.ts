@@ -1,14 +1,13 @@
 let Birak = 0
 DFRobotMaqueenPlus.I2CInit()
-DFRobotMaqueenPlus.clearDistance(Motors.M1)
 basic.forever(function () {
     basic.showNumber(parseFloat(DFRobotMaqueenPlus.readeDistance(Motors1.M1)))
 })
 basic.forever(function () {
     Birak = parseFloat(DFRobotMaqueenPlus.readeDistance(Motors1.M1))
-    if (Birak < 5) {
-        DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CW, 100)
+    if (Birak < 29) {
+        DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 100)
     } else {
-        DFRobotMaqueenPlus.mototStop(Motors.M1)
+        DFRobotMaqueenPlus.mototStop(Motors.ALL)
     }
 })
